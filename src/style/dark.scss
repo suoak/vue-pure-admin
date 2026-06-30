@@ -89,7 +89,13 @@ html.dark {
 
   .app-main,
   .app-main-nofixed-header {
-    background: #020409 !important;
+    background:
+      radial-gradient(
+        circle at top left,
+        rgb(30 64 175 / 14%),
+        transparent 22%
+      ),
+      linear-gradient(180deg, #020409 0%, #07111f 100%) !important;
   }
 
   .logic-flow-view,
@@ -171,7 +177,7 @@ html.dark {
   }
 
   .el-card {
-    --el-card-bg-color: var(--el-bg-color);
+    --el-card-bg-color: rgb(7 13 25 / 86%);
   }
 
   .el-backtop {

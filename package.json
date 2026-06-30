@@ -1,5 +1,5 @@
 {
-  "name": "vue-pure-admin",
+  "name": "ai-devops-collaboration-platform",
   "version": "7.0.0",
   "private": true,
   "type": "module",
@@ -22,30 +22,17 @@
     "preinstall": "npx only-allow pnpm"
   },
   "keywords": [
-    "vue-pure-admin",
     "element-plus",
     "tailwindcss",
-    "pure-admin",
+    "ai-devops",
+    "collaboration",
     "typescript",
     "pinia",
     "vue3",
     "vite",
     "esm"
   ],
-  "homepage": "https://github.com/pure-admin/vue-pure-admin",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pure-admin/vue-pure-admin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/pure-admin/vue-pure-admin/issues"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "xiaoxian521",
-    "email": "pureadmin@163.com",
-    "url": "https://github.com/xiaoxian521"
-  },
+  "license": "UNLICENSED",
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
     "@howdyjs/mouse-menu": "^2.1.7",

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { getTopMenu } from "@/router/utils";
 import { useNav } from "@/layout/hooks/useNav";
 
@@ -7,32 +8,22 @@ defineProps({
 });
 
 const { title, getLogo } = useNav();
+const sidebarDisplayTitle = computed(() => {
+  return title.value.includes("AI + DevOps") ? "AI + DevOps" : title.value;
+});
 </script>
 
 <template>
   <div class="sidebar-logo-container" :class="{ collapses: collapse }">
-    <transition name="sidebarLogoFade">
-      <router-link
-        v-if="collapse"
-        key="collapse"
-        :title="title"
-        class="sidebar-logo-link"
-        :to="getTopMenu()?.path ?? '/'"
-      >
-        <img :src="getLogo()" alt="logo" />
-        <span class="sidebar-title">{{ title }}</span>
-      </router-link>
-      <router-link
-        v-else
-        key="expand"
-        :title="title"
-        class="sidebar-logo-link"
-        :to="getTopMenu()?.path ?? '/'"
-      >
-        <img :src="getLogo()" alt="logo" />
-        <span class="sidebar-title">{{ title }}</span>
-      </router-link>
-    </transition>
+    <router-link
+      :title="title"
+      :aria-label="title"
+      class="sidebar-logo-link"
+      :to="getTopMenu()?.path ?? '/'"
+    >
+      <img :src="getLogo()" alt="logo" />
+      <span class="sidebar-title">{{ sidebarDisplayTitle }}</span>
+    </router-link>
   </div>
 </template>
 
@@ -42,30 +33,51 @@ const { title, getLogo } = useNav();
   width: 100%;
   height: 48px;
   overflow: hidden;
+  background:
+    radial-gradient(circle at left top, rgb(96 165 250 / 12%), transparent 28%),
+    linear-gradient(180deg, rgb(255 255 255 / 96%), rgb(248 250 252 / 98%));
+  border-bottom: 1px solid rgb(148 163 184 / 12%);
 
   .sidebar-logo-link {
+    box-sizing: border-box;
     display: flex;
-    flex-wrap: nowrap;
+    gap: 10px;
     align-items: center;
+    width: 100%;
     height: 100%;
-    padding-left: 10px;
+    padding: 0 12px;
 
     img {
-      display: inline-block;
-      height: 32px;
+      display: block;
+      flex: none;
+      height: 30px;
+      border-radius: 10px;
+      filter: drop-shadow(0 10px 20px rgb(15 23 42 / 24%));
     }
 
     .sidebar-title {
-      display: inline-block;
-      height: 32px;
-      margin: 2px 0 0 12px;
+      flex: 1;
+      min-width: 0;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 32px;
+      font-family: var(--app-font-sans);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1;
       color: var(--pure-theme-sub-menu-active-text);
+      letter-spacing: 0.02em;
       white-space: nowrap;
+    }
+  }
+
+  &.collapses {
+    .sidebar-logo-link {
+      justify-content: center;
+      padding: 0;
+    }
+
+    .sidebar-title {
+      display: none;
     }
   }
 }

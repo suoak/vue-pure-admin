@@ -5,11 +5,12 @@ import ReQrcode from "@/components/ReQrcode";
 import { useUserStoreHook } from "@/store/modules/user";
 
 const { t } = useI18n();
+const qrText = "AI + DevOps 研发协作平台";
 </script>
 
 <template>
   <Motion class="-my-2">
-    <ReQrcode :text="t('login.pureTest')" />
+    <ReQrcode :text="qrText" />
   </Motion>
   <Motion :delay="100">
     <el-divider>

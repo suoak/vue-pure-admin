@@ -13,10 +13,10 @@ export default defineFakeRoute([
         data: {
           avatar: "https://avatars.githubusercontent.com/u/44761321",
           username: "admin",
-          nickname: "小铭",
-          email: "pureadmin@163.com",
+          nickname: "小明",
+          email: "admin@ruijie.com.cn",
           phone: "15888886789",
-          description: "一个热爱开源的前端工程师"
+          description: "一个热爱开源的工程师"
         }
       };
     }

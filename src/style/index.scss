@@ -6,6 +6,22 @@
 
 /* 自定义全局 CssVar */
 :root {
+  --color-primary: #1e40af;
+  --color-on-primary: #fff;
+  --color-secondary: #3b82f6;
+  --color-accent: #d97706;
+  --color-background: #f8fafc;
+  --color-foreground: #1e3a8a;
+  --color-muted: #e9eef6;
+  --color-border: #dbeafe;
+  --color-destructive: #dc2626;
+  --color-ring: #1e40af;
+  --app-font-sans:
+    "Fira Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Helvetica Neue", sans-serif;
+  --app-font-mono:
+    "Fira Code", "JetBrains Mono", "SFMono-Regular", consolas, monospace;
+
   /* 左侧菜单展开、收起动画时长 */
   --pure-transition-duration: 0.3s;
 
@@ -24,6 +40,37 @@
   --pure-theme-sidebar-logo: none;
   --pure-theme-menu-title-hover: initial;
   --pure-theme-menu-active-before: transparent;
+
+  /* AI + DevOps 演示主题 */
+  --ai-page-bg: var(--color-background);
+  --ai-page-bg-elevated: #fff;
+  --ai-page-grid:
+    radial-gradient(circle at top left, rgb(30 64 175 / 10%), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgb(217 119 6 / 8%), transparent 18%),
+    linear-gradient(180deg, #f8fbff 0%, #f3f7fc 100%);
+  --ai-card-radius-lg: 22px;
+  --ai-card-radius-md: 18px;
+  --ai-card-border: 1px solid rgb(148 163 184 / 14%);
+  --ai-card-shadow-sm: 0 14px 32px rgb(15 23 42 / 6%);
+  --ai-card-shadow-md: 0 24px 54px rgb(37 99 235 / 16%);
+  --ai-hero-gradient:
+    radial-gradient(circle at 84% 18%, rgb(255 255 255 / 18%), transparent 25%),
+    radial-gradient(circle at 16% 88%, rgb(125 211 252 / 20%), transparent 28%),
+    linear-gradient(135deg, #12366f 0%, #2563eb 56%, #0284c7 100%);
+  --ai-surface-gradient: linear-gradient(180deg, #fcfdff 0%, #fff 100%);
+  --ai-surface-strong: linear-gradient(
+    180deg,
+    rgb(239 246 255 / 96%),
+    rgb(255 255 255 / 100%)
+  );
+  --ai-shell-bg: rgb(255 255 255 / 84%);
+  --ai-shell-border: 1px solid rgb(255 255 255 / 64%);
+  --ai-tag-accessed: #16a34a;
+  --ai-tag-trial: var(--color-primary);
+  --ai-tag-planning: #6b7280;
+  --ai-tag-risk-high: var(--color-destructive);
+  --ai-tag-risk-medium: var(--color-accent);
+  --ai-tag-risk-low: #16a34a;
 }
 
 /* 灰色模式 */

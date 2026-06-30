@@ -44,18 +44,14 @@ export async function getPluginsList(
       hideConsole: true
     }),
     viteBuildInfo(),
-    /**
-     * 开发环境下移除非必要的vue-router动态路由警告No match found for location with path
-     * 非必要具体看 https://github.com/vuejs/router/issues/521 和 https://github.com/vuejs/router/issues/359
-     * vite-plugin-router-warn只在开发环境下启用，只处理vue-router文件并且只在服务启动或重启时运行一次，性能消耗可忽略不计
-     */
+    /** 开发环境下移除非必要的 vue-router 动态路由警告。 */
     removeNoMatch(),
     // mock支持
     vitePluginFakeServer({
       logger: false,
       include: "mock",
       infixName: false,
-      enableProd: true
+      enableProd: false
     }),
     // svg组件化支持
     svgLoader(),

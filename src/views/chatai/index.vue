@@ -99,24 +99,8 @@ const swiperExample: any[] = [
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <span class="font-medium">
-          Ai聊天组件，采用开源的
-          <el-link
-            href="https://deepchat.dev/"
-            target="_blank"
-            style="margin: 0 4px 5px; font-size: 16px"
-          >
-            deep-chat
-          </el-link>
-        </span>
+        <span class="font-medium">AI 对话能力演示</span>
       </div>
-      <el-link
-        class="mt-2"
-        href="https://github.com/pure-admin/vue-pure-admin/blob/main/src/views/chatai"
-        target="_blank"
-      >
-        代码位置 src/views/chatai
-      </el-link>
     </template>
     <el-space wrap>
       <el-card

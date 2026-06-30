@@ -33,7 +33,7 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
 </script>
 
 <template>
-  <div class="navbar bg-white shadow-xs shadow-[rgba(0,21,41,0.08)]">
+  <div class="navbar">
     <LaySidebarTopCollapse
       v-if="device === 'mobile'"
       class="hamburger-container"
@@ -53,11 +53,13 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
       <LaySearch id="header-search" />
       <!-- 国际化 -->
       <el-dropdown id="header-translation" trigger="click">
-        <div
+        <button
+          type="button"
+          aria-label="Change language"
           class="globalization-icon navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
         >
           <IconifyIconOffline :icon="GlobalizationIcon" />
-        </div>
+        </button>
         <template #dropdown>
           <el-dropdown-menu class="translation">
             <el-dropdown-item
@@ -114,13 +116,15 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-      <span
+      <button
+        type="button"
         class="set-icon navbar-bg-hover hover:[&>svg]:animate-scale-bounce"
         :title="t('buttons.pureOpenSystemSet')"
+        :aria-label="t('buttons.pureOpenSystemSet')"
         @click="onPanel"
       >
         <IconifyIconOffline :icon="Setting" />
-      </span>
+      </button>
     </div>
   </div>
 </template>
@@ -128,13 +132,17 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
 <style lang="scss" scoped>
 .navbar {
   width: 100%;
-  height: 48px;
+  height: 52px;
   overflow: hidden;
+  background: rgb(255 255 255 / 76%);
+  border-bottom: 1px solid rgb(148 163 184 / 14%);
+  box-shadow: 0 8px 24px rgb(15 23 42 / 4%);
+  backdrop-filter: blur(14px);
 
   .hamburger-container {
     float: left;
     height: 100%;
-    line-height: 48px;
+    line-height: 52px;
     cursor: pointer;
   }
 
@@ -143,20 +151,25 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
     align-items: center;
     justify-content: flex-end;
     min-width: 280px;
-    height: 48px;
-    color: #000000d9;
+    height: 52px;
+    color: rgb(15 23 42 / 82%);
 
     .el-dropdown-link {
       display: flex;
       align-items: center;
       justify-content: space-around;
-      height: 48px;
-      padding: 10px;
-      color: #000000d9;
+      height: 44px;
+      padding: 0 12px;
+      color: rgb(15 23 42 / 82%);
       cursor: pointer;
+      border-radius: 14px;
+      transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
 
       p {
         font-size: 14px;
+        font-weight: 600;
       }
 
       img {
@@ -171,6 +184,25 @@ const { t, locale, translationCh, translationEn } = useTranslationLang();
     float: left;
     margin-left: 16px;
   }
+}
+
+.globalization-icon,
+.set-icon {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 14px;
+}
+
+:deep(.search-container),
+:deep(.globalization-icon),
+:deep(.fullscreen-icon),
+:deep(.dropdown-badge),
+:deep(.el-dropdown-link),
+:deep(.set-icon) {
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .translation {

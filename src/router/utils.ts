@@ -23,8 +23,13 @@ import { type menuType, routerArrays } from "@/layout/types";
 import { useMultiTagsStoreHook } from "@/store/modules/multiTags";
 import { usePermissionStoreHook } from "@/store/modules/permission";
 const IFrame = () => import("@/layout/frame.vue");
-// https://cn.vitejs.dev/guide/features.html#glob-import
-const modulesRoutes = import.meta.glob("/src/views/**/*.{vue,tsx}");
+const modulesRoutes = import.meta.glob([
+  "/src/views/ai-devops/**/*.{vue,tsx}",
+  "/src/views/login/**/*.{vue,tsx}",
+  "/src/views/error/**/*.{vue,tsx}",
+  "/src/views/account-settings/**/*.{vue,tsx}",
+  "/src/views/empty/**/*.{vue,tsx}"
+]);
 
 // 动态路由
 import { getAsyncRoutes } from "@/api/routes";
@@ -149,7 +154,7 @@ function addPathMatch() {
     name: PAGE_NOT_FOUND_ROUTE_NAME,
     component: () => import("@/views/error/404.vue"),
     meta: {
-      title: "menus.purePageNotFound",
+      title: "页面不存在",
       showLink: false
     }
   });
@@ -255,7 +260,6 @@ function formatFlatteningRoutes(routesList: RouteRecordRaw[]) {
 
 /**
  * 一维数组处理成多级嵌套数组（三级及以上的路由全部拍成二级，keep-alive 只支持到二级缓存）
- * https://github.com/pure-admin/vue-pure-admin/issues/67
  * @param routesList 处理后的一维路由菜单数组
  * @returns 返回将一维数组重新处理成规定路由的格式
  */

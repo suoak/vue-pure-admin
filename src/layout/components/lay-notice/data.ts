@@ -21,7 +21,24 @@ export const noticesData: TabItem[] = [
   {
     key: "1",
     name: $t("status.pureNotify"),
-    list: [],
+    list: [
+      {
+        avatar: "",
+        title: "需求池新增跨团队协同主题",
+        description:
+          "本周新增 12 条研发协作需求，已由 AI 助理完成初步聚类与优先级建议。",
+        datetime: "10 分钟前",
+        type: "1"
+      },
+      {
+        avatar: "",
+        title: "集成环境完成自动回归",
+        description:
+          "回归任务覆盖 96 个关键场景，失败用例已自动归档到问题看板。",
+        datetime: "今天 09:30",
+        type: "1"
+      }
+    ],
     emptyText: $t("status.pureNoNotify")
   },
   {
@@ -29,25 +46,19 @@ export const noticesData: TabItem[] = [
     name: $t("status.pureMessage"),
     list: [
       {
-        avatar: "https://xiaoxian521.github.io/hyperlink/svg/smile1.svg",
-        title: "小铭 评论了你",
-        description: "诚在于心，信在于行，诚信在于心行合一。",
+        avatar: "",
+        title: "AI 评审助手已生成代码审阅摘要",
+        description:
+          "支付域服务的 3 个高风险改动已生成差异摘要，并附带回滚建议。",
         datetime: "今天",
         type: "2"
       },
       {
-        avatar: "https://xiaoxian521.github.io/hyperlink/svg/smile2.svg",
-        title: "李白 回复了你",
-        description: "长风破浪会有时，直挂云帆济沧海。",
-        datetime: "昨天",
-        type: "2"
-      },
-      {
-        avatar: "https://xiaoxian521.github.io/hyperlink/svg/smile5.svg",
-        title: "标题",
+        avatar: "",
+        title: "测试负责人更新了内部验证结论",
         description:
-          "请将鼠标移动到此处，以便测试超长的消息在此处将如何处理。本例中设置的描述最大行数为2，超过2行的描述内容将被省略并且可以通过tooltip查看完整内容",
-        datetime: "时间",
+          "RC-2026.06 版本的可发布建议已同步到协作驾驶舱，请及时查看。",
+        datetime: "昨天",
         type: "2"
       }
     ],
@@ -59,38 +70,29 @@ export const noticesData: TabItem[] = [
     list: [
       {
         avatar: "",
-        title: "第三方紧急代码变更",
+        title: "上线前风险复核",
         description:
-          "小林提交于 2024-05-10，需在 2024-05-11 前完成代码变更任务",
+          "请在今天 18:00 前完成支付链路、通知链路与权限链路的发布前复核。",
         datetime: "",
-        extra: "马上到期",
+        extra: "高优先级",
         status: "danger",
         type: "3"
       },
       {
         avatar: "",
-        title: "版本发布",
-        description: "指派小铭于 2024-06-18 前完成更新并发布",
+        title: "周会材料准备",
+        description: "同步整理研发流程核心指标，用于领导例会演示与答疑。",
         datetime: "",
-        extra: "已耗时 8 天",
+        extra: "准备中",
         status: "warning",
         type: "3"
       },
       {
         avatar: "",
-        title: "新功能开发",
-        description: "开发多租户管理",
+        title: "缺陷闭环复盘",
+        description: "内部测试阶段的 6 个核心问题需补充根因与预防措施。",
         datetime: "",
         extra: "进行中",
-        type: "3"
-      },
-      {
-        avatar: "",
-        title: "任务名称",
-        description: "任务需要在 2030-10-30 10:00 前启动",
-        datetime: "",
-        extra: "未开始",
-        status: "info",
         type: "3"
       }
     ],

@@ -39,6 +39,9 @@ const {
   getDropdownItemStyle,
   getDropdownItemClass
 } = useNav();
+const horizontalDisplayTitle = computed(() => {
+  return title.value.includes("AI + DevOps") ? "AI + DevOps" : title.value;
+});
 
 const defaultActive = computed(() =>
   !isAllEmpty(route.meta?.activePath) ? route.meta.activePath : route.path
@@ -62,7 +65,7 @@ onMounted(() => {
   >
     <div v-if="showLogo" class="horizontal-header-left" @click="backTopMenu">
       <img :src="getLogo()" alt="logo" />
-      <span>{{ title }}</span>
+      <span>{{ horizontalDisplayTitle }}</span>
     </div>
     <el-menu
       ref="menuRef"
@@ -181,6 +184,25 @@ onMounted(() => {
     display: inline-flex;
     flex-wrap: wrap;
     min-width: 100%;
+  }
+}
+
+.horizontal-header-left {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgb(15 23 42 / 18%);
+  }
+
+  span {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
   }
 }
 </style>

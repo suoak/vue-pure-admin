@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@400;500;600;700;800&display=swap");
+
 #app {
   width: 100%;
   height: 100%;
@@ -16,13 +18,12 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  font-family:
-    "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-family: var(--app-font-sans);
   line-height: inherit;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
+  background: var(--ai-page-bg);
 }
 
 hr {
@@ -49,9 +50,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family: var(--app-font-mono);
   font-size: 1em;
 }
 

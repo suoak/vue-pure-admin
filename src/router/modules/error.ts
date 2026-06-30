@@ -1,4 +1,3 @@
-import { $t } from "@/plugins/i18n";
 import { error } from "@/router/enums";
 
 export default {
@@ -6,9 +5,9 @@ export default {
   redirect: "/error/403",
   meta: {
     icon: "ri/information-line",
-    // showLink: false,
-    title: $t("menus.pureAbnormal"),
-    rank: error
+    title: "异常页面",
+    rank: error,
+    showLink: false
   },
   children: [
     {
@@ -16,7 +15,7 @@ export default {
       name: "403",
       component: () => import("@/views/error/403.vue"),
       meta: {
-        title: $t("menus.pureAccessDenied")
+        title: "无权访问"
       }
     },
     {
@@ -24,7 +23,7 @@ export default {
       name: "404",
       component: () => import("@/views/error/404.vue"),
       meta: {
-        title: $t("menus.purePageNotFound")
+        title: "页面不存在"
       }
     },
     {
@@ -32,7 +31,7 @@ export default {
       name: "500",
       component: () => import("@/views/error/500.vue"),
       meta: {
-        title: $t("menus.pureServerError")
+        title: "服务异常"
       }
     }
   ]

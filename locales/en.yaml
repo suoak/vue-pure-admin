@@ -152,10 +152,10 @@ menus:
   purePrint: Print
   pureDownload: Download
   pureExternalPage: External Page
-  pureExternalDoc: Docs External
-  pureEmbeddedDoc: Docs Embedded
-  pureExternalLink: Vue-Pure-Admin
-  pureUtilsLink: Pure-Admin-Utils
+  pureExternalDoc: Platform External
+  pureEmbeddedDoc: Platform Embedded
+  pureExternalLink: AI DevOps Platform
+  pureUtilsLink: Collaboration Toolkit
   pureColorHuntDoc: ColorHunt
   pureUiGradients: UiGradients
   pureEpDoc: Element-Plus
